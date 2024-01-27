@@ -1,5 +1,5 @@
 #import this function to use
-#example: from bf read_passwords
+#from bf import read_passwords
 
 def read_passwords(filename):
     with open(filename, 'r') as file:
