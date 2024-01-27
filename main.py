@@ -24,9 +24,9 @@ class SystemStub:
         else:
             is_same_password = password == self.password
             if is_same_password:
-                return "success 2 case"
+                return "success"
             else:
-                return "invalid try again"
+                return "invalid"
 
 def do_bruteforce(system_stub, filename):
     passwords = read_passwords(filename)  #bf module fuction!!
