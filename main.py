@@ -31,7 +31,7 @@ class SystemStub:
 def do_bruteforce(system_stub, filename):
     passwords = read_passwords(filename)  #bf module fuction!!
     for password in passwords:
-        if system_stub.auth(password) == '!!! SUCCESS !!!':
+        if system_stub.auth(password) == 'success':
             return password
     return None
 
