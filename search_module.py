@@ -16,21 +16,21 @@ def search_dir(dirname_part, path, recursive=True):
         dirs = path.glob(f"*{dirname_part}*")
     return [dir for dir in dirs if dir.is_dir()]
 
-# Пример использования
+# example
 test_dir = Path("path_to_directory")
 
-# Найти все файлы .txt
+# Find all files with .txt extension
 txt_files = search_file("", ".txt", test_dir, recursive=True)
 print("All .txt files: ", txt_files)
 
-# Найти все файлы .csv
+# Find all files with .csv extension
 csv_files = search_file("", ".csv", test_dir, recursive=True)
 print("All .csv files: ", csv_files)
 
-# Найти директорию содержащую текст "третья"
+# Find a directory, which name contains "третья"
 dir_containing_text = search_dir("третья", test_dir, recursive=True)
 print("Directory containing the text 'третья': ", dir_containing_text)
 
-# Найти файл, начинающийся с "."
+# Find a file, which starts with "."
 hidden_files = search_file(".", "", test_dir, recursive=True)
 print("All files starting with '.': ", hidden_files)
