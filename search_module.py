@@ -16,7 +16,7 @@ def search_dir(dirname_part, path, recursive=True):
         dirs = path.glob(f"*{dirname_part}*")
     return [dir for dir in dirs if dir.is_dir()]
 
-# example
+# change to real directory 
 test_dir = Path("path_to_directory")
 
 # Find all files with .txt extension
