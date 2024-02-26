@@ -1,3 +1,3 @@
-kode quality 9/100%
+kode quality 2/10
 peredelat
 s uchetom patternov
