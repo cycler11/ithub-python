@@ -60,29 +60,29 @@ class DeckBuilder:
         deck = Deck()
         suits = self.suits_factory.get_standard_suits()
         for suit in suits:
-            for rank in range(6, 15):  # 6 - Ace
-                if rank <= num_cards - 26:
-                    card = Card(rank, suit)
-                    deck.add_card(card)
+            for rank in range(6, min(15, num_cards + 6)):  # Ensure not to exceed 14 ranks
+                card = Card(rank, suit)
+                deck.add_card(card)
         return deck
 
 
 def main():
     deck_builder = DeckBuilder()
-    deck1 = deck_builder.build_deck(234234)
-    deck2 = deck_builder.build_deck(23423423423423423432)
+    deck1 = deck_builder.build_deck(36)
+    deck2 = deck_builder.build_deck(52)
 
-    print("total cards:", len(deck1.cards))
+    print("Total cards in deck 1:", len(deck1.cards))
     print(deck1.to_text())
 
-    print("\ntotal cards:", len(deck2.cards))
+    print("\nTotal cards in deck 2:", len(deck2.cards))
     print(deck2.to_text())
 
     deck1.shuffle()
     deck2.shuffle()
 
-    print("\nShuffled decks:")
+    print("\nShuffled deck 1:")
     print(deck1.to_text())
+    print("\nShuffled deck 2:")
     print(deck2.to_text())
 
 
